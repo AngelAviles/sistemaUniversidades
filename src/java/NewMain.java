@@ -47,28 +47,33 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        Alumno alumno1 = new Alumno(5, "dsdads", "hola", "fsfsdfsf", new ArrayList<>());
-//        Alumno alumno2 = new Alumno(6, "ccdvdvdv", "hola", "dvvvdvdvdv", new ArrayList<>());
-//
-//        Materia materia1 = new Materia(1, "ffsdf", "algebrea", new ArrayList<Calificacion>(), new ArrayList<MateriaPlandeestudio>(), new ArrayList<MateriasSerializacion>(), new ArrayList<>());
-//        Materia materia2 = new Materia(2, "sdsd", "programacion1", new ArrayList<Calificacion>(), new ArrayList<MateriaPlandeestudio>(), new ArrayList<MateriasSerializacion>(), new ArrayList<>());
-//
-//        Calificacion cal1 = new Calificacion(1, materia1, alumno1, 10);
-//        Calificacion cal2 = new Calificacion(2, materia1, alumno2, 8);
-//        Calificacion cal3 = new Calificacion(3, materia2, alumno1, 8);
-//        Calificacion cal4 = new Calificacion(4, materia2, alumno2, 7);
-//
-//        EntityManagerFactory factory = Persistence.createEntityManagerFactory("SistemaUniversidadesPU");
-//        
-////        AlumnoJpaController jpa = new AlumnoJpaController(factory);
-////        MateriaJpaController jpa = new MateriaJpaController(factory);
-//        CalificacionJpaController jpa = new CalificacionJpaController(factory);
-//        
-//        
-//        jpa.create(cal1);
-//        jpa.create(cal2);
-//        jpa.create(cal3);
-//        jpa.create(cal4);
+        Alumno alumno1 = new Alumno(5, "dsdads", "hola", "fsfsdfsf", new ArrayList<>());
+        Alumno alumno2 = new Alumno(6, "ccdvdvdv", "hola", "dvvvdvdvdv", new ArrayList<>());
+
+        Materia materia1 = new Materia(1, "ffsdf", "algebrea", new ArrayList<Calificacion>(), new ArrayList<MateriaPlandeestudio>(), new ArrayList<MateriasSerializacion>(), new ArrayList<>());
+        Materia materia2 = new Materia(2, "sdsd", "programacion1", new ArrayList<Calificacion>(), new ArrayList<MateriaPlandeestudio>(), new ArrayList<MateriasSerializacion>(), new ArrayList<>());
+
+        Calificacion cal1 = new Calificacion(1, materia1, alumno1, 10);
+        Calificacion cal2 = new Calificacion(2, materia1, alumno2, 8);
+        Calificacion cal3 = new Calificacion(3, materia2, alumno1, 8);
+        Calificacion cal4 = new Calificacion(4, materia2, alumno2, 7);
+
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("SistemaUniversidadesPU");
+        
+        AlumnoJpaController jpaAlumno = new AlumnoJpaController(factory);
+        MateriaJpaController jpaMateria = new MateriaJpaController(factory);
+        CalificacionJpaController jpaCalificacion = new CalificacionJpaController(factory);
+        
+        jpaAlumno.create(alumno1);
+        jpaAlumno.create(alumno2);
+        
+        jpaMateria.create(materia1);
+        jpaMateria.create(materia2);
+        
+        jpaCalificacion.create(cal1);
+        jpaCalificacion.create(cal2);
+        jpaCalificacion.create(cal3);
+        jpaCalificacion.create(cal4);
 
         InputStream inputStream = null;
         JasperPrint jasperPrint = null;
